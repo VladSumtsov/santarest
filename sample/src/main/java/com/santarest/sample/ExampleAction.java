@@ -102,11 +102,6 @@ public class ExampleAction extends BaseExampleAction {
         return requestId;
     }
 
-    public static class Contributor {
-        String login;
-        int contributions;
-    }
-
     @Override
     public String toString() {
         return "ExampleAction{" +
@@ -118,5 +113,10 @@ public class ExampleAction extends BaseExampleAction {
                 ", headers=" + requestHeaders +
                 ", status=" + status +
                 '}';
+    }
+
+    public static class Contributor {
+        String login;
+        int contributions;
     }
 }

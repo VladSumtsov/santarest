@@ -1,6 +1,5 @@
 package com.santarest.validation;
 
-import com.santarest.CollectionTypes;
 import com.santarest.RestActionClass;
 import com.santarest.annotations.Body;
 import com.santarest.annotations.Error;
@@ -24,6 +23,7 @@ import java.util.Set;
 
 import static com.santarest.CollectionTypes.TYPE_COLLECTION_WITH_HEADER;
 import static com.santarest.CollectionTypes.TYPE_LIST_WITH_HEADER;
+import static com.santarest.CollectionTypes.TYPE_MAP_WITH_STRINGS;
 import static com.santarest.CollectionTypes.TYPE_MAP_WITH_STRING_KEYS;
 
 /**
@@ -50,7 +50,7 @@ public class RestActionValidators implements Validator<RestActionClass> {
         validators.add(new AnnotationTypesValidator(QueryMap.class, TYPE_MAP_WITH_STRING_KEYS));
         validators.add(new AnnotationTypesValidator(FieldMap.class, TYPE_MAP_WITH_STRING_KEYS));
         validators.add(new AnnotationTypesValidator(ResponseHeader.class, String.class));
-        validators.add(new AnnotationTypesValidator(ResponseHeaders.class, CollectionTypes.TYPE_MAP_WITH_STRINGS, TYPE_LIST_WITH_HEADER, TYPE_COLLECTION_WITH_HEADER, Header[].class));
+        validators.add(new AnnotationTypesValidator(ResponseHeaders.class, TYPE_MAP_WITH_STRINGS, TYPE_LIST_WITH_HEADER, TYPE_COLLECTION_WITH_HEADER, Header[].class));
         validators.add(new AnnotationTypesValidator(RequestHeaders.class, TYPE_MAP_WITH_STRING_KEYS, TYPE_LIST_WITH_HEADER, TYPE_COLLECTION_WITH_HEADER, Header[].class));
         validators.add(new AnnotationTypesValidator(Status.class, Boolean.class, Integer.class, Long.class, String.class, boolean.class, int.class, long.class));
         validators.add(new AnnotationTypesValidator(Error.class, Throwable.class, Exception.class));
